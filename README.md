@@ -33,6 +33,35 @@ The English-Kurdish Translator project provides a collection of JSON files conta
    kurdish_translations = translations.get(word, {}).get("kurdish", [])
    print(f"{word}: {kurdish_translations}")
    ```
+   ```javascript
+       <script>
+        async function getTranslate(word) {
+            const url = 'https://raw.githubusercontent.com/rzgarespo/english-kurdish-dictionary-json/main/W_translations.json';
+
+            try {
+                // Fetch JSON data
+                const response = await fetch(url);
+
+                // Check if the request was successful
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                // Parse JSON
+                const translations = await response.json();
+
+                // Access translations for the provided word
+                const kurdishTranslations = translations[word]?.kurdish || [];
+                document.getElementById('demo').innerHTML = word +": "+ kurdishTranslations;
+            } catch (error) {
+                console.error('Error fetching data:', error.message);
+            }
+        }
+
+        // Example usage
+        getTranslate('Wadding');
+    </script>
+   ```
 
 ## Contributing
 
