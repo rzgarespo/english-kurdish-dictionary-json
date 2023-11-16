@@ -13,7 +13,7 @@ The English-Kurdish Translator project provides a collection of JSON files conta
 ## Usage
 
 1. **Download JSON Files:**
-   - Navigate to the [main]([https://github.com/rzgarespo/english-kurdish-dictionary-json/))  repository page.
+   - Navigate to the [main]([https://github.com/rzgarespo/english-kurdish-dictionary-json/)  repository page.
    - Download the desired JSON file(s) containing translations.
 
 2. **Integrate into Your Project:**
