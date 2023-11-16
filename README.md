@@ -25,7 +25,7 @@ The English-Kurdish Translator project provides a collection of JSON files conta
    import json
 
    # Load JSON file
-   with open('translations_A.json', 'r', encoding='utf-8') as json_file:
+   with open('W_translations.json', 'r', encoding='utf-8') as json_file:
        translations = json.load(json_file)
 
    # Access translations for a specific word
