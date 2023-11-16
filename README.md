@@ -33,6 +33,7 @@ The English-Kurdish Translator project provides a collection of JSON files conta
    kurdish_translations = translations.get(word, {}).get("kurdish", [])
    print(f"{word}: {kurdish_translations}")
    ```
+   4. **Example Usage in JavaScript:**
    ```javascript
        <script>
         async function getTranslate(word) {
