@@ -21,7 +21,7 @@ The English-Kurdish Translator project provides a collection of JSON files conta
    - Access translations programmatically based on the structure provided in the JSON files.
 
 3. **Example Usage in Python:**
-   ```python
+ ```python
 import requests
 import json
 import re
@@ -32,12 +32,10 @@ def get_translation(word):
         wc = word.capitalize()
         url = f"https://raw.githubusercontent.com/rzgarespo/english-kurdish-dictionary-json/main/{url_char}_translations.json"
         res = requests.get(url)
-        
-        
+
         if res.status_code == 200:
             data = res.json()
-            
-            
+   
             if wc in data and 'kurdish' in data[wc]:
                 print(f"{word}: {data[wc]['kurdish']}")
             else:
@@ -54,7 +52,7 @@ mylist =filtered_input.split()
 for x in mylist:
     get_translation(x)
     
-   ```
+ ```
    4. **Example Usage in JavaScript:**
    ```javascript
        <script>
