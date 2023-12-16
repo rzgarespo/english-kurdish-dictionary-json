@@ -22,16 +22,38 @@ The English-Kurdish Translator project provides a collection of JSON files conta
 
 3. **Example Usage in Python:**
    ```python
-   import json
+import requests
+import json
+import re
 
-   # Load JSON file
-   with open('W_translations.json', 'r', encoding='utf-8') as json_file:
-       translations = json.load(json_file)
+def get_translation(word):
+    try:
+        url_char = word[0].capitalize()
+        wc = word.capitalize()
+        url = f"https://raw.githubusercontent.com/rzgarespo/english-kurdish-dictionary-json/main/{url_char}_translations.json"
+        res = requests.get(url)
+        
+        
+        if res.status_code == 200:
+            data = res.json()
+            
+            
+            if wc in data and 'kurdish' in data[wc]:
+                print(f"{word}: {data[wc]['kurdish']}")
+            else:
+                print(f"{wc} is not found")
+        else:
+            print("Failed to fetch data")
 
-   # Access translations for a specific word
-   word = "Wadding"
-   kurdish_translations = translations.get(word, {}).get("kurdish", [])
-   print(f"{word}: {kurdish_translations}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+myinput = input("write a few words").strip()
+filtered_input = re.sub(r'[^a-zA-Z\s]', '', myinput)
+mylist =filtered_input.split()
+for x in mylist:
+    get_translation(x)
+    
    ```
    4. **Example Usage in JavaScript:**
    ```javascript
